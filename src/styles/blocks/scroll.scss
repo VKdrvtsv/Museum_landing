@@ -1,0 +1,70 @@
+$numbersTablet: ("1": 0px, "2": 360px, "3": 720px, "4": 720px);
+$numbersMobile: ("1": 0px, "2": 280px, "3": 560px, "4": 840px);
+
+.scroll {
+  &__images {
+    margin-bottom: 32px;
+    transition: transform $effectDuration;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      flex-wrap: nowrap;
+      height: 543px;
+
+      @each $number, $trans in $numbersTablet {
+        &--#{$number} {
+          transform: translateX(-$trans);
+        }
+      }
+    }
+
+    @include onMobile {
+      margin-bottom: 20px;
+      height: 410px;
+
+      @each $num, $transfor in $numbersMobile {
+        &--#{$num} {
+          transform: translateX(-$transfor);
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+
+    @include onTablet {
+      width: 340px;
+    }
+
+    @include onMobile {
+      width: 260px;
+    }
+  }
+
+  &-indicators {
+    display: flex;
+    align-self: center;
+    width: 102px;
+    justify-content: space-between;
+  }
+
+  &-indicator {
+    display: block;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background-color: $scroll-color;
+    border: none;
+    padding: 0;
+    transition: background-color $effectDuration;
+
+    @include hover(cursor, pointer);
+
+    &--active {
+      background-color: $main-green;
+    }
+  }
+}
