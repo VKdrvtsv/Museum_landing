@@ -40,6 +40,7 @@
 
     &--large {
       grid-column: span 8;
+
       @include hover(transform, scale(1.05));
 
       @include onTablet {
@@ -49,6 +50,7 @@
 
     &--narrow {
       grid-column: span 4;
+      
       @include hover(transform, scale(1.05));
     }
   }

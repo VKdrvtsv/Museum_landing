@@ -26,7 +26,7 @@
     grid-template-columns: repeat(6, 1fr);
   }
 
-  @include onMobile() {
+  @include onMobile {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
   }
