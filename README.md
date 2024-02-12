@@ -3,6 +3,6 @@ A page for National Art Museum of Ukraine. There are all the current events in M
 
 This page was created using HTML5 + CSS3 (BEM) and SASS preprocessor technologies.
 
-[DEMO LINK](https://VKdrvtsv.github.io/Museum_glanding/).
+[DEMO LINK](https://VKdrvtsv.github.io/Museum_landing/).
 
 The mockup (https://www.figma.com/file/cRBCqE06cDrY3s4jX7h3iY/%D0%9D%D0%90%D0%9C%D0%A3-(Edit)?node-id=0%3A1)
