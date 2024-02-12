@@ -1,68 +1,70 @@
 $numbers-tablet: ("1": 0, "2": 360px, "3": 720px, "4": 720px);
 $numbers-mobile: ("1": 0, "2": 280px, "3": 560px, "4": 840px);
 
-.scroll__images {
+.scroll {
+  &__images {
   margin-bottom: 32px;
   transition: transform $effectDuration;
 
-  @include onTablet {
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      flex-wrap: nowrap;
+      height: 543px;
+
+      @each $number, $trans in $numbers-tablet {
+        &--#{$number} {
+          transform: translateX(-$trans);
+        }
+      }
+    }
+
+    @include onMobile {
+      margin-bottom: 20px;
+      height: 410px;
+
+      @each $num, $transfor in $numbers-mobile {
+        &--#{$num} {
+          transform: translateX(-$transfor);
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+
+    @include onTablet {
+      width: 340px;
+    }
+
+    @include onMobile {
+      width: 260px;
+    }
+  }
+
+  &-indicators {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: nowrap;
-    height: 543px;
+    align-self: center;
+    width: 102px;
+    justify-content: space-between;
+  }
 
-    @each $number, $trans in $numbers-tablet {
-      &--#{$number} {
-        transform: translateX(-$trans);
-      }
+  &-indicator {
+    display: block;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background-color: $scroll-color;
+    border: none;
+    padding: 0;
+    transition: background-color $effectDuration;
+
+    @include hover(cursor, pointer);
+
+    &--active {
+      background-color: $main-green;
     }
-  }
-
-  @include onMobile {
-    margin-bottom: 20px;
-    height: 410px;
-
-    @each $num, $transfor in $numbers-tablet {
-      &--#{$num} {
-        transform: translateX(-$transfor);
-      }
-    }
-  }
-}
-
-&__image {
-  display: block;
-
-  @include onTablet {
-    width: 340px;
-  }
-
-  @include onMobile {
-    width: 260px;
-  }
-}
-
-&-indicators {
-  display: flex;
-  align-self: center;
-  width: 102px;
-  justify-content: space-between;
-}
-
-&-indicator {
-  display: block;
-  height: 9px;
-  width: 9px;
-  border-radius: 50%;
-  background-color: $scroll-color;
-  border: none;
-  padding: 0;
-  transition: background-color $effectDuration;
-
-  @include hover(cursor, pointer);
-
-  &--active {
-    background-color: $main-green;
   }
 }
