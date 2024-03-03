@@ -1,7 +1,7 @@
 # Museum landing page
 A page for National Art Museum of Ukraine. There are all the current events in Museum, it`s schedule and images of some paintings presented there. You can subscribe to the news or buy tickets. You can see also all the info about contacts like links to pages in social networks, phone/fax numbers and address.
 
-This page was created using HTML5 + CSS3 (BEM) and SASS preprocessor technologies.
+This page was created using HTML5 + CSS3 (BEM) and SASS preprocessor technologies. Also JavaScript was used was used in this project.
 
 [DEMO LINK](https://VKdrvtsv.github.io/Museum_landing/).
 
